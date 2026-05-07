@@ -105,14 +105,12 @@ int main() {
     printf("Carta 2 - %s: %d\n", nomeCidade2, population2);
 
     if(population1 > population2){
-        printf("Carta 1 (%s) venceu!", nomeCidade1);
+        printf("Carta 1 (%s) venceu!\n", nomeCidade1);
     } else if(population1 < population2){
-        printf("Carta 2 (%s) venceu!", nomeCidade2);
+        printf("Carta 2 (%s) venceu!\n", nomeCidade2);
     } else {
-        printf("Empate!");
+        printf("Empate!\n");
     }
-
-    return 0;
 
     return 0;
 }
