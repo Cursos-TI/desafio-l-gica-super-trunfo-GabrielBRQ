@@ -8,12 +8,12 @@
 int main()
 {
     unsigned long int population1, population2;
-    int attractions1, attractions2, escolhaJogador;
+    int attractions1, attractions2, escolhaJogador, escolhaJogador2;
     char codigoEstado1, codigoEstado2;
     char codigoCarta1[5], codigoCarta2[5];
     char nomeCidade1[50], nomeCidade2[50];
     float area1, area2, pib1, pib2, densidadepop1, densidadepop2,
-        pibPerCapita1, pibPerCapita2, densPopul1, densPopul2, super1, super2;
+        pibPerCapita1, pibPerCapita2, densPopul1, densPopul2, super1, super2, total1, total2;
 
     float superPoder1, superPoder2, inversoDensidade1, inversoDensidade2;
 
@@ -113,6 +113,138 @@ int main()
     {
     case 1:
         printf("----POPULAÇÃO----\n");
+        total1 += population1;
+        total2 += population2;
+        printf("(%s) %d X %d (%s)\n", nomeCidade1, population1, population2, nomeCidade2);
+        if (population1 > population2)
+        {
+            printf("%s Venceu!\n", nomeCidade1);
+        }
+        else if (population1 < population2)
+        {
+            printf("%s Venceu!\n", nomeCidade2);
+        }
+        else
+        {
+            printf("----Empate!----\n");
+        }
+        printf("---------Escolha outro atributo---------\n");
+        printf("2 - Área\n");
+        printf("3 - PIB\n");
+        printf("4 - Pontos turísticos\n");
+        printf("5 - Densidade Demografica\n");
+        break;
+    case 2:
+        printf("----Área----\n");
+        total1 += area1;
+        total2 += area2;
+        printf("(%s) %.2f X %.2f (%s)\n", nomeCidade1, area1, area2, nomeCidade2);
+        if (area1 > area2)
+        {
+            printf("%s Venceu!\n", nomeCidade1);
+        }
+        else if (area1 < area2)
+        {
+            printf("%s Venceu!\n", nomeCidade2);
+        }
+        else
+        {
+            printf("----Empate!----\n");
+        }
+        printf("---------Escolha outro atributo---------\n");
+        printf("1 - População\n");
+        printf("3 - PIB\n");
+        printf("4 - Pontos turísticos\n");
+        printf("5 - Densidade Demografica\n");
+        break;
+    case 3:
+        printf("----PIB---\n-");
+        printf("(%s) %.2f X %.2f (%s)\n", nomeCidade1, pib1, pib2, nomeCidade2);
+        total1 += pib1;
+        total2 += pib2;
+        if (pib1 > pib2)
+        {
+            printf("%s Venceu!\n", nomeCidade1);
+        }
+        else if (pib1 < pib2)
+        {
+            printf("%s Venceu!\n", nomeCidade2);
+        }
+        else
+        {
+            printf("----Empate!----\n");
+        }
+        printf("---------Escolha outro atributo---------\n");
+        printf("1 - População\n");
+        printf("2 - Área\n");
+        printf("4 - Pontos turísticos\n");
+        printf("5 - Densidade Demografica\n");
+        break;
+    case 4:
+        printf("----PONTOS TURISTICOS----\n");
+        printf("(%s) %d X %d (%s)\n", nomeCidade1, attractions1, attractions2, nomeCidade2);
+        total1 += attractions1;
+        total2 += attractions2;
+        if (attractions1 > attractions2)
+        {
+            printf("%s Venceu!\n", nomeCidade1);
+        }
+        else if (attractions1 < attractions2)
+        {
+            printf("%s Venceu!\n", nomeCidade2);
+        }
+        else
+        {
+            printf("----Empate!----\n");
+        }
+        printf("---------Escolha outro atributo---------\n");
+        printf("1 - População\n");
+        printf("2 - Área\n");
+        printf("3 - PIB\n");
+        printf("5 - Densidade Demografica\n");
+        break;
+    case 5:
+        printf("----Densidade Demográfica----\n");
+        printf("(%s) %.2f X %.2f (%s)\n", nomeCidade1, densidadepop1, densidadepop2, nomeCidade2);
+        total1 += inversoDensidade1;
+        total2 += inversoDensidade2;
+        if (densidadepop1 > densidadepop2)
+        {
+            printf("%s Venceu!\n", nomeCidade1);
+        }
+        else if (densidadepop1 < densidadepop2)
+        {
+            printf("%s Venceu!\n", nomeCidade2);
+        }
+        else
+        {
+            printf("----Empate!----\n");
+        }
+        printf("---------Escolha outro atributo---------\n");
+        printf("1 - População\n");
+        printf("2 - Área\n");
+        printf("3 - PIB\n");
+        printf("4 - Pontos turísticos\n");
+        break;
+    default:
+        printf("Opção Inválida\n");
+        break;
+    }
+
+    scanf("%d", &escolhaJogador2);
+
+    if (escolhaJogador == escolhaJogador2)
+    {
+        printf("Não pode escolher novamente o mesmo atributo!");
+        escolhaJogador2 = 0;
+    }
+
+    switch (escolhaJogador2)
+    {
+    case 1:
+        printf("----POPULAÇÃO----\n");
+        total1 += population1;
+        total2 += population2;
         printf("(%s) %d X %d (%s)\n", nomeCidade1, population1, population2, nomeCidade2);
         if (population1 > population2)
         {
@@ -129,6 +261,8 @@ int main()
         break;
     case 2:
         printf("----Área----\n");
+        total1 += area1;
+        total2 += area2;
         printf("(%s) %.2f X %.2f (%s)\n", nomeCidade1, area1, area2, nomeCidade2);
         if (area1 > area2)
         {
@@ -146,6 +280,8 @@ int main()
     case 3:
         printf("----PIB---\n-");
         printf("(%s) %.2f X %.2f (%s)\n", nomeCidade1, pib1, pib2, nomeCidade2);
+        total1 += pib1;
+        total2 += pib2;
         if (pib1 > pib2)
         {
             printf("%s Venceu!\n", nomeCidade1);
@@ -162,6 +298,8 @@ int main()
     case 4:
         printf("----PONTOS TURISTICOS----\n");
         printf("(%s) %d X %d (%s)\n", nomeCidade1, attractions1, attractions2, nomeCidade2);
+        total1 += attractions1;
+        total2 += attractions2;
         if (attractions1 > attractions2)
         {
             printf("%s Venceu!\n", nomeCidade1);
@@ -176,8 +314,10 @@ int main()
         }
         break;
     case 5:
-         printf("----Densidade Demográfica----\n");
+        printf("----Densidade Demográfica----\n");
         printf("(%s) %.2f X %.2f (%s)\n", nomeCidade1, densidadepop1, densidadepop2, nomeCidade2);
+        total1 += inversoDensidade1;
+        total2 += inversoDensidade2;
         if (densidadepop1 > densidadepop2)
         {
             printf("%s Venceu!\n", nomeCidade1);
@@ -196,5 +336,15 @@ int main()
         break;
     }
 
+    printf("------Resultado total dos 2 atributos------");
+
+    if(total1 > total2){
+        printf("Valor total da carta 1 é maior!");
+    } else if(total1 < total2){
+        printf("Valor total da carta 2 é maior!");
+    } else {
+        printf("Empate!");
+    }
+    
     return 0;
 }
